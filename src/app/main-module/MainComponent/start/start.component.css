@@ -1,0 +1,105 @@
+.font-fam{
+    font-family: 'Libre Baskerville';
+  }
+.card-color{
+    background: linear-gradient(120deg, #003e29 0%, #467061 100%);
+}
+
+.approach-h2{
+    color:#003e29;
+}
+.LC{
+    background-color: #003e29;
+    color: white;
+}
+.PU{
+    background-color: #003e29;
+    color: white;
+}
+.fonts{
+    font-size: 70px;
+}
+#header{
+    background: linear-gradient(to bottom,rgba(9,30,62,.7),rgba(9,30,62,.7)), url('../../../../assets/contract.jpg') top/cover no-repeat;
+    height: 80vh;
+}
+.carousel-inner h1{
+    font-size: 60px;
+    font-family: var(--lg-font);
+}
+
+.carousel-item .btn:hover{
+    border-color: var(--pink)!important;
+}
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -100px;
+        z-index: 1;
+    }
+}
+
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    color: #003e29;
+    background-color: white;
+}
+.interest{
+    background-color: #003e29;
+    height: 70vh;
+}
+
+
+    .interest-div{
+    height: 60vh;
+}
+h3{
+    color:#003e29;
+}
+
+.hrcolor{
+    background-color: #003e29;
+    height: 5px;
+    
+}
+ul li {
+    font-family: 'Libre Baskerville';
+}
+h4{
+    color:rgb(0, 61, 43);
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Libre Baskerville';
+      
+  }
+  h2{font-family: 'Libre Baskerville';}
+
+        h3{font-family: 'Libre Baskerville';      }
+        h1{font-family: 'Libre Baskerville';      }
+  p{
+
+    font-family: 'Andada Pro', serif;
+      font-size: 14px;
+      line-height: 22px;
+      color: #676a6b;
+      font-weight: 300;
+  }
+/* 
+p {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size:14px;
+    color: #333333;
+  } */
+  .card1:hover{
+    /* transform: translateY(-10px);
+    box-shadow: 0 25px rgb(0 0 0 /15%); */
+    box-shadow: -0.4rem 0.8rem 1.4rem 1.4rem #0003;
+    transition: all .5s linear;
+   
+    
+  }
+  #icons{
+    color: rgb(173, 230, 185);
+  }
