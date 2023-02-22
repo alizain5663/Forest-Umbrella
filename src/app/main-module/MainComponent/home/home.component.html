@@ -577,20 +577,55 @@
         </div>
       </div>
       <div class="contact-form-wrapper">
-        <form>
+        <form (ngSubmit)="SubmitContactForm()" [formGroup]="ContactForm">
           <div class="form-item">
-            <input type="text" name="sender" required>
+            <input type="text" name="sender" formControlName="firstName" required>
             <label>Name:</label>
           </div>
+          <!-- validation -->
+          <div class="error text-light" *ngIf="ContactForm.controls['firstName'].invalid
+          && (ContactForm.controls['firstName'].dirty
+          ||
+          ContactForm.controls['firstName'].touched)">
+          <span *ngIf="(ContactForm.controls['firstName'].errors.pattern)">
+              Only Alphabest Allowed !!</span>
+          <span *ngIf="ContactForm.controls['firstName'].errors.required">
+              <small>Field Required!</small>
+          </span>
+      </div>
+      <!-- validation -->
           <div class="form-item">
-            <input type="text" name="email" required>
+            <input type="text" formControlName="email" name="email" required>
             <label>Email:</label>
           </div>
+          <!-- validation -->
+          <div class="error text-danger" *ngIf="ContactForm.controls['email'].invalid
+          && (ContactForm.controls['email'].dirty ||
+          ContactForm.controls['email'].touched)">
+          <span *ngIf="ContactForm.controls['email'].errors.required">
+              <small>Field Required!</small>
+          </span>
+
+          <span *ngIf="ContactForm.controls['email'].errors.email">
+              <small>Enter Valid Email</small>
+          </span>
+      </div>
+      <!-- validation -->
           <div class="form-item">
-            <textarea class="" name="message" required></textarea>
+            <textarea class="" formControlName="message" name="message" required></textarea>
             <label>Message:</label>
           </div>
-          <button class="submit-btn">Send</button>  
+         <!-- validation -->
+         <div class="error  text-light"
+         *ngIf="ContactForm.controls['message'].invalid && (ContactForm.controls['message'].dirty || ContactForm.controls['message'].touched)">
+         <span *ngIf="ContactForm.controls['message'].errors.maxlength ">
+             <small>Message should not more than 500 characters</small></span>
+         <span *ngIf="ContactForm.controls['message'].errors.required">
+             <small>Field Required!</small>
+         </span>
+     </div>
+     <!-- validation -->
+          <button type="submit" class="submit-btn" [disabled]="ContactForm.pristine || ContactForm.invalid" >Send</button>  
         </form>
       </div>
     </div>
