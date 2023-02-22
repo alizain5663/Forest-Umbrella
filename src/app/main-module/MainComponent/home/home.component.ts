@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     private emailService:EmailService,
     private toastr: ToastrService
   ) {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    
    }
 
   ngOnInit(
@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit {
   public SubmitContactForm() {
 
     let formValue = this.ContactForm.value;
-    console.log(formValue);
     
     this.emailService.sendEmail(formValue).subscribe((res:any)=>{
       console.log(res.message);
+      this.toastr.success(res.message);
       this.ContactForm.reset();
     })
 }
