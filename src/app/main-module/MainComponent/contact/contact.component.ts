@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EmailService } from 'src/app/shared/nodemailerApi/email.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class ContactComponent implements OnInit {
 constructor(
   private formBuilder:FormBuilder,
   private emailService:EmailService,
+  private toastr: ToastrService
   
   ) { }
 
@@ -39,9 +41,9 @@ constructor(
   public SubmitContactForm() {
 
     let formValue = this.ContactForm.value;
-    console.log(formValue);
     this.emailService.sendEmail(formValue).subscribe((res:any)=>{
       console.log(res.message);
+      this.toastr.success(res.message);
       this.ContactForm.reset();
     })
 }
