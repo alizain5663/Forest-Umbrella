@@ -13,6 +13,7 @@ import { StartComponent } from './MainComponent/start/start.component';
 import { PrivacyComponent } from './MainComponent/privacy/privacy.component';
 import { TermsComponent } from './MainComponent/terms/terms.component';
 import { ModernslaveryComponent } from './MainComponent/modernslavery/modernslavery.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import { ModernslaveryComponent } from './MainComponent/modernslavery/modernslav
   ],
   imports: [
     CommonModule,
-    MainModuleRoutingModule
+    MainModuleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MainModuleModule { }
