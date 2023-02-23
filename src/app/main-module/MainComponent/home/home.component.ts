@@ -48,8 +48,6 @@ export class HomeComponent implements OnInit {
     el.scrollIntoView();
   }
 
-  scroll(el: HTMLElement){
-    el.scrollIntoView();
-  }
+  
 
 }
